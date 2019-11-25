@@ -18,7 +18,7 @@ class NavSide extends React.Component{
                         </li>
                         <li className="active">
                             <Link to="/film">
-                                <i className="fa fa-sitemap"></i> 
+                                <i className="fa fa-list"></i> 
                                 <span>影片</span>
                                 <span className="fa arrow"></span>
                             </Link>
@@ -27,13 +27,13 @@ class NavSide extends React.Component{
                                     <NavLink to="/film" activeClassName="active-menu">影片管理</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/film-category" activeClassName="active-menu">片类管理</NavLink>
+                                    <NavLink to="/film-category" activeClassName="active-menu">分类管理</NavLink>
                                 </li>
                             </ul>
                         </li>
                          <li className="active">
                             <Link to="/user">
-                                <i className="fa fa-sitemap"></i> 
+                                <i className="fa fa-user-o"></i> 
                                 <span>用户</span>
                                 <span className="fa arrow"></span>
                             </Link>
