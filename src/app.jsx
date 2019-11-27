@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-18 21:12:17
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2019-11-24 21:56:31
+* @Last Modified time: 2019-11-25 09:34:53
 */
 
 import React          from 'react';
@@ -20,8 +20,9 @@ import Layout   from 'component/layout/index.jsx';
 
 // 页面
 import Home           from 'page/home/index.jsx';
+import FilmRouter     from 'page/film/router.jsx';
 import Login          from 'page/login/index.jsx';
-import UserList           from 'page/user/index.jsx';
+import UserList       from 'page/user/index.jsx';
 import ErrorPage      from 'page/error/index.jsx';
 
 
@@ -31,7 +32,7 @@ class App extends React.Component{
               <Layout>
                   <Switch>
                       <Route exact path="/" component={Home}/>
-                      <Route path="/film" component={Home}/>
+                      <Route path="/film" component={FilmRouter}/>
                       <Route path="/film-category" component={Home}/>
                       <Route path="/user/index" component={UserList}/>
                       <Redirect exact from="/user" to="/user/index"/>
@@ -46,7 +47,7 @@ class App extends React.Component{
                   <Route path="/" render={ props => LayoutRouter }/>
               </Switch>
             </Router>
-        );
+        )
     }
 }
 
