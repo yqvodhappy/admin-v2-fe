@@ -2,19 +2,30 @@
 * @Author: Dtvikey
 * @Date:   2019-11-18 21:12:17
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2019-11-19 09:42:06
+* @Last Modified time: 2019-11-28 13:34:45
 */
 const path              = require('path');
 const webpack           = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev'
+console.log(WEBPACK_ENV);
 module.exports = {
       entry  : './src/app.jsx',
       output : {
-            path     : path.resolve(__dirname, 'dist'),
-            publicPath: '/dist/',
-            filename : 'js/app.js'
+            path        : path.resolve(__dirname, 'dist'),
+            publicPath  : WEBPACK_ENV === 'dev'
+                          ? '/dist/' : '//s.yqrb.com.cn/admin-v2-fe/dist/',
+            filename    : 'js/app.js'
+      },
+      resolve: {
+        alias : {
+            page        : path.resolve(__dirname, 'src/page'),
+            component   : path.resolve(__dirname, 'src/component'),
+            util        : path.resolve(__dirname, 'src/util'),
+            service     : path.resolve(__dirname, 'src/service')
+        }
       },
     module: {
     rules: [
@@ -76,7 +87,8 @@ module.exports = {
       plugins: [
             // 处理html文件
             new HtmlWebpackPlugin({
-                template: './src/index.html'
+                template: './src/index.html',
+                favicon:  './favicon.ico'
             }),
             // 独立css文件
             new ExtractTextPlugin("css/[name].css"),
@@ -87,6 +99,23 @@ module.exports = {
             })
       ],
       devServer: {
-           port: 8086
+           port: 8086,
+           historyApiFallback: {
+                index: '/dist/index.html'
+           },
+           proxy : {
+                '/manage' :{
+                    target: 'http://www.yqrb.com.cn',
+                    changeOrigin : true
+                },
+                '/user/logout.do' :{
+                    target: 'http://www.yqrb.com.cn',
+                    changeOrigin : true
+                },
+                '/user/reset_password.do' :{
+                    target: 'http://www.yqrb.com.cn',
+                    changeOrigin : true
+                }
+           }
       }
 };
