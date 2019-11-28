@@ -47,6 +47,7 @@ class User{
             url  : '/user/logout.do'
        });
     }
+    // 获取用户列表
     getUserList(pageNum){
         return _vv.request({
             type : 'post',

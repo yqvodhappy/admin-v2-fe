@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-25 09:38:55
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2019-11-27 17:17:58
+* @Last Modified time: 2019-11-28 09:40:11
 */
 
 
@@ -11,7 +11,7 @@ import VUtil from 'util/vv.jsx';
 const  _vv   = new VUtil();
 
 class Film{
-    // 获取用户列表
+    // 获取影片列表
     getFilmList(listParam){
         let url   = '',
             data  = {};
@@ -109,9 +109,7 @@ class Film{
             data    : film
         });
     }
-    /*
-    *  品类相关
-    */
+    // 根据父分类id获取分类列表
     getCategoryList(parentCategoryId){
         return _vv.request({
             type    : 'post',
@@ -119,6 +117,22 @@ class Film{
             data    : {
                 categoryId : parentCategoryId || 0
             }
+        });
+    }
+    // 新增分类
+    saveCategory(category){
+        return _vv.request({
+            type    : 'post',
+            url     : '/manage/category/add_category.do',
+            data    : category
+        });
+    }
+    // 修改分类名称
+    updateCategoryName(category){
+        return _vv.request({
+            type    : 'post',
+            url     : '/manage/category/set_category_name.do',
+            data    : category
         });
     }
 }

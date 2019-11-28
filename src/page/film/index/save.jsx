@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-25 19:54:54
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2019-11-27 20:22:53
+* @Last Modified time: 2019-11-28 04:51:32
 */
 
 import React              from 'react';
@@ -139,7 +139,7 @@ class FilmSave extends React.Component{
     render(){
         return (
               <div id="page-wrapper">
-                    <PageTitle title="添加影片" />
+                    <PageTitle title={this.state.id ? '编辑影片' : '添加影片'} />
                     <div className="form-horizontal">
                           <div className="form-group">
                             <label className="col-md-2 control-label">影片主标题</label>
