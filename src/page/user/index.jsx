@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-24 21:45:48
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2019-11-27 21:39:58
+* @Last Modified time: 2019-11-28 10:35:43
 */
 
 import React        from 'react';
@@ -28,6 +28,7 @@ class UserList extends React.Component{
     componentDidMount(){
         this.loadUserList();
     }
+    // 加载用户列表
     loadUserList(){
         _user.getUserList(this.state.pageNum).then(res => {
             this.setState(res);
@@ -46,6 +47,23 @@ class UserList extends React.Component{
             this.loadUserList();
         });
     }
+    // 登录中状态重置密码
+    onUpdatePassword(passwordOld, passwordNew){
+        let pwdOld = passwordOld,
+            pwdNew = window.prompt('请输入新的密码',passwordNew);
+
+        if(pwdNew){
+            _user.updatePassword({
+                passwordOld: pwdOld,
+                passwordNew: pwdNew
+            }).then(res => {
+                _vv.successTips(res);
+                this.loadUserList();
+            }, errMsg => {
+                _vv.errorTips(errMsg);
+            });
+        }
+    }
     render(){
         let listBody = this.state.list.map((user, index) => {
             return (
@@ -55,13 +73,17 @@ class UserList extends React.Component{
                     <td>{user.email}</td>
                     <td>{user.phone}</td>
                     <td>{new Date(user.createTime).toLocaleString()}</td>
+                    <td>
+                        <a className="opear"
+                           onClick={(e) => this.onUpdatePassword(user.password, user.password)}>修改密码</a>
+                    </td>
                 </tr>
             );
         });
         return (
             <div id="page-wrapper">
                 <PageTitle title="用户列表"/>
-                <TableList tableHeads={['ID', '用户名', '邮箱', '电话', '注册时间']}>
+                <TableList tableHeads={['ID', '用户名', '邮箱', '电话', '注册时间', '操作']}>
                     {listBody}
                 </TableList>
                 <Pagination current={this.state.pageNum} 

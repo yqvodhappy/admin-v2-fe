@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-28 04:46:02
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2019-11-28 09:35:59
+* @Last Modified time: 2019-11-28 10:10:23
 */
 
 
@@ -77,11 +77,11 @@ class CategoryList extends React.Component{
                     <td>
                         <a className="opear"
                            onClick={(e) => this.onUpdateName(category.id, category.name)}>修改名称</a>
-                        {
-                            category.parentId == 0 
-                            ? <Link to={`/film-category/index/${category.id}`}>查看子分类</Link>
-                            : null
-                        }
+                           {
+                                category.parentId == 0 
+                                ? <Link to={`/film-category/index/${category.id}`}>查看子分类</Link>
+                                : null
+                           }
                     </td>
                 </tr>
             );

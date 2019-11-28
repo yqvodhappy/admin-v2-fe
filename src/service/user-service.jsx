@@ -57,6 +57,14 @@ class User{
             }
        });
     }
+    // 登录中状态重置密码
+    updatePassword(user){
+        return _vv.request({
+            type    : 'post',
+            url     : '/user/reset_password.do',
+            data    : user
+        });
+    }
 }
 
 export default User;
