@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-27 06:31:16
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2019-11-27 17:06:40
+* @Last Modified time: 2020-04-28 10:35:41
 */
 
 
@@ -30,7 +30,7 @@ class RichEditor extends React.Component{
             textarea: $(element),
             defaultValue: this.props.placeholder || '请输入内容',
             upload: {
-                url             : '/manage/film/richtext_img_upload.do',
+                url             : '/manage/film/richtext_img_upload',
                 defaultImage    : '',
                 fileKey         : 'upload_file'
             }
