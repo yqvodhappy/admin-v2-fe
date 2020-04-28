@@ -13,7 +13,7 @@ class User{
     login(loginInfo){
         return _vv.request({
             type : 'post',
-            url  : '/manage/user/login.do',
+            url  : '/passport/login',
             data : loginInfo
        });
     }
@@ -44,14 +44,14 @@ class User{
     logout(){
         return _vv.request({
             type : 'post',
-            url  : '/user/logout.do'
+            url  : '/passport/logout'
        });
     }
     // 获取用户列表
     getUserList(pageNum){
         return _vv.request({
             type : 'post',
-            url  : '/manage/user/list.do',
+            url  : '/passport/list',
             data : {
                 pageNum : pageNum
             }
@@ -61,7 +61,7 @@ class User{
     updatePassword(user){
         return _vv.request({
             type    : 'post',
-            url     : '/user/reset_password.do',
+            url     : '/passport/reset_password',
             data    : user
         });
     }

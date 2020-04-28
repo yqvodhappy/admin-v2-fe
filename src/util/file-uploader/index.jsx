@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-26 14:41:20
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2019-11-26 17:24:06
+* @Last Modified time: 2020-04-28 10:36:40
 */
 import React        from 'react';
 import FileUpload   from './react-fileupload.jsx';
@@ -10,7 +10,7 @@ import FileUpload   from './react-fileupload.jsx';
 class FileUploader extends React.Component{
     render(){
         const options={
-            baseUrl         :'/manage/film/upload.do',
+            baseUrl         :'/manage/film/upload',
             fileFieldName   : 'upload_file',
             dataType        : 'json',
             chooseAndUpload : true,
