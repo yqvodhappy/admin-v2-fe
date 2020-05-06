@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-25 09:38:55
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2020-04-27 21:13:12
+* @Last Modified time: 2020-05-06 17:51:51
 */
 
 
@@ -16,10 +16,10 @@ class Film{
         let url   = '',
             data  = {};
         if (listParam.listType === 'list') {
-            url                         = '/manage/film/list';
+            url                         = _vv.getServerUrl('/manage/film/list');
             data.pageNum                = listParam.pageNum;
         }else if(listParam.listType === 'search'){
-            url                         = '/manage/film/search';
+            url                         = _vv.getServerUrl('/manage/film/search');
             data.pageNum                = listParam.pageNum;
             data[listParam.searchType]  = listParam.keyword;
         }
@@ -34,7 +34,7 @@ class Film{
     getFilm(filmId){
         return _vv.request({
             type    : 'post',
-            url     : '/manage/film/detail',
+            url     : _vv.getServerUrl('/manage/film/detail'),
             data    : {
                 filmId : filmId || 0
             }
@@ -44,7 +44,7 @@ class Film{
     setFilmStatus(filmInfo){
         return _vv.request({
             type    : 'post',
-            url     : '/manage/film/set_sale_status',
+            url     : _vv.getServerUrl('/manage/film/set_sale_status'),
             data    : filmInfo
         });
     }
@@ -105,7 +105,7 @@ class Film{
     saveFilm(film){
         return _vv.request({
             type    : 'post',
-            url     : '/manage/film/save',
+            url     : _vv.getServerUrl('/manage/film/save'),
             data    : film
         });
     }
@@ -113,7 +113,7 @@ class Film{
     getCategoryList(parentCategoryId){
         return _vv.request({
             type    : 'post',
-            url     : '/manage/category/get_category',
+            url     : _vv.getServerUrl('/manage/category/get_category'),
             data    : {
                 categoryId : parentCategoryId || 0
             }
@@ -123,7 +123,7 @@ class Film{
     saveCategory(category){
         return _vv.request({
             type    : 'post',
-            url     : '/manage/category/add_category',
+            url     : _vv.getServerUrl('/manage/category/add_category'),
             data    : category
         });
     }
@@ -131,7 +131,7 @@ class Film{
     updateCategoryName(category){
         return _vv.request({
             type    : 'post',
-            url     : '/manage/category/set_category_name',
+            url     : _vv.getServerUrl('/manage/category/set_category_name'),
             data    : category
         });
     }

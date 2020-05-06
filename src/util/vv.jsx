@@ -29,6 +29,12 @@ class MUtil{
     doLogin(){
         window.location.href = '/login?redirect=' + encodeURIComponent(window.location.pathname);
     }
+
+    // 获取服务器地址
+    getServerUrl (path){
+        return 'http://api.yqrb.com.cn:8088/flutter-yqvod-dev-api' + path;
+    }
+
     // 获取URL参数
     getUrlParam(name){
         // xxx.com?parma=123&param1=456789
