@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-25 09:38:55
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2020-05-06 17:51:51
+* @Last Modified time: 2020-05-10 20:03:10
 */
 
 
@@ -16,7 +16,7 @@ class Film{
         let url   = '',
             data  = {};
         if (listParam.listType === 'list') {
-            url                         = _vv.getServerUrl('/manage/film/list');
+            url                         = _vv.getServerUrl('/manage/film/list2');
             data.pageNum                = listParam.pageNum;
         }else if(listParam.listType === 'search'){
             url                         = _vv.getServerUrl('/manage/film/search');
