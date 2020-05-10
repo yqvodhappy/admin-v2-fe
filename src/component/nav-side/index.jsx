@@ -34,12 +34,12 @@ class NavSide extends React.Component{
                          <li className="active">
                             <Link to="/user">
                                 <i className="fa fa-user-o"></i> 
-                                <span>用户</span>
+                                <span>用户2</span>
                                 <span className="fa arrow"></span>
                             </Link>
                             <ul className="nav nav-second-level collapse in">
                                 <li>
-                                    <NavLink to="/user2" activeClassName="active-menu">用户管理</NavLink>
+                                    <NavLink to="/user" activeClassName="active-menu">用户管理2</NavLink>
                                 </li>
                             </ul>
                         </li>
