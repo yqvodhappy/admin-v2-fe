@@ -51,7 +51,7 @@ class User{
     getUserList(pageNum){
         return _vv.request({
             type : 'post',
-            url  : _vv.getServerUrl('/passport/list'),
+            url  : _vv.getServerUrl('/passport/list2'),
             data : {
                 pageNum : pageNum
             }
