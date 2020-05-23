@@ -13,7 +13,7 @@ class User{
     login(loginInfo){
         return _vv.request({
             type : 'post',
-            url  : _vv.getServerUrl('/passport/login'),
+            url  : _vv.getServerUrl('/passport/login2'),
             data : loginInfo
        });
     }
