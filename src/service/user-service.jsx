@@ -13,7 +13,7 @@ class User{
     login(loginInfo){
         return _vv.request({
             type : 'post',
-            url  : _vv.getServerUrl('/passport/login2'),
+            url  : '/passport/login2',
             data : loginInfo
        });
     }
@@ -51,7 +51,7 @@ class User{
     getUserList(pageNum){
         return _vv.request({
             type : 'post',
-            url  : _vv.getServerUrl('/passport/list2'),
+            url  : '/passport/list2',
             data : {
                 pageNum : pageNum
             }
