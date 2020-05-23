@@ -12,7 +12,7 @@ class MUtil{
                        typeof resolve === 'function' && resolve(res.data, res.msg);
                     }
                      // 没有登录状态，强制登录
-                    else if(500 === res.status){
+                    else if(10 === res.status){
                        this.doLogin();
                     }
                     else{
