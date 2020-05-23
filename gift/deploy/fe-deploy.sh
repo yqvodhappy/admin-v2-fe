@@ -1,11 +1,11 @@
 # @Author: Dtvikey
 # @Date:   2019-11-28 15:56:20
 # @Last Modified by:   Dtvikey
-# @Last Modified time: 2020-04-29 17:12:46
+# @Last Modified time: 2020-05-23 12:27:38
 #!/bin/sh
 
 GIT_HOME=/developer/git-repository/
-DEST_PATH=/film/front/
+DEST_PATH=/film/frontend/
 
 if [ ! -n "$1" ];
 then
