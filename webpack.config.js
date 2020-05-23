@@ -2,7 +2,7 @@
 * @Author: Dtvikey
 * @Date:   2019-11-18 21:12:17
 * @Last Modified by:   Dtvikey
-* @Last Modified time: 2020-05-23 18:49:41
+* @Last Modified time: 2020-05-23 20:09:55
 */
 const path              = require('path');
 const webpack           = require('webpack');
@@ -105,15 +105,15 @@ module.exports = {
            },
            proxy : {
                 '/manage' :{
-                    target: 'http://api.yqrb.com.cn:8088/flutter-yqvod-dev-api',
+                    target: 'http://www.yqrb.com.cn/flutter-yqvod-dev-api',
                     changeOrigin : true
                 },
                 '/passport/logout' :{
-                    target: 'http://api.yqrb.com.cn:8088/flutter-yqvod-dev-api',
+                    target: 'http://www.yqrb.com.cn/flutter-yqvod-dev-api',
                     changeOrigin : true
                 },
                 '/passport/reset_password' :{
-                    target: 'http://api.yqrb.com.cn:8088/flutter-yqvod-dev-api',
+                    target: 'http://www.yqrb.com.cn/flutter-yqvod-dev-api',
                     changeOrigin : true
                 }
            }
