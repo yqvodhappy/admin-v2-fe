@@ -27,7 +27,7 @@ class MUtil{
     }
     // 跳转登录
     doLogin(){
-        window.location.href = 'http://api.yqrb.com.cn:8088/flutter-yqvod-dev-api/login2?redirect=' + encodeURIComponent(window.location.pathname);
+        window.location.href = '/login?redirect=' + encodeURIComponent(window.location.pathname);
     }
 
     // 获取服务器地址
