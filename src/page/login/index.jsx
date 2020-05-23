@@ -21,6 +21,7 @@ class Login extends React.Component{
     }
     // 当输入框发生改变
     onInputChange(e){
+        console.log(e.target.value)
         let inputValue = e.target.value,
             inputName  = e.target.name;
         this.setState({
