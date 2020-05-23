@@ -13,7 +13,7 @@ class MUtil{
                     }
                      // 没有登录状态，强制登录
                     else if(500 === res.status){
-                       this.doLogin();
+                       //this.doLogin();
                     }
                     else{
                        typeof reject === 'function' && reject(res.msg || res.data);
@@ -32,7 +32,7 @@ class MUtil{
 
     // 获取服务器地址
     getServerUrl (path){
-        return 'http://www.yqrb.com.cn/flutter-yqvod-dev-api' + path;
+        return 'http://api.yqrb.com.cn:8088/flutter-yqvod-dev-api' + path;
     }
 
     // 获取URL参数
