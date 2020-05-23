@@ -52,9 +52,7 @@ class User{
         return _vv.request({
             type : 'post',
             url  : _vv.getServerUrl('/passport/list2'),
-            data : {
-                pageNum : pageNum
-            }
+            
        });
     }
     // 登录中状态重置密码
