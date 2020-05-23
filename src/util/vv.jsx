@@ -5,7 +5,6 @@ class MUtil{
                 type       : param.type     || 'get',
                 url        : param.url      || '',
                 dataType   : param.dataType || 'json',
-                headers :{'Content-Type': 'application/json'},
                 data       : param.data     || null,
                 success    : res => {
                     // 数据请求成功

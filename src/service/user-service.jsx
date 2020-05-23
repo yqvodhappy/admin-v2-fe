@@ -44,14 +44,14 @@ class User{
     logout(){
         return _vv.request({
             type : 'post',
-            url  : _vv.getServerUrl('/passport/logout')
+            url  : '/passport/logout'
        });
     }
     // 获取用户列表
     getUserList(pageNum){
         return _vv.request({
             type : 'post',
-            url  : _vv.getServerUrl('/passport/list2'),
+            url  : '/passport/list2',
             data : {
                 pageNum : pageNum
             }
@@ -61,7 +61,7 @@ class User{
     updatePassword(user){
         return _vv.request({
             type    : 'post',
-            url     : _vv.getServerUrl('/passport/reset_password'),
+            url     : '/passport/reset_password',
             data    : user
         });
     }
