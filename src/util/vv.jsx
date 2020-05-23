@@ -13,7 +13,7 @@ class MUtil{
                     }
                      // 没有登录状态，强制登录
                     else if(500 === res.status){
-                       //this.doLogin();
+                        this.doLogin();
                     }
                     else{
                        typeof reject === 'function' && reject(res.msg || res.data);
